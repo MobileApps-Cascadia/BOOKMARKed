@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Log out", Toast.LENGTH_SHORT).show();
                 return true;
 
+            case R.id.action_postABook:
+                Intent bookIntent = new Intent(this, BookActivity.class);
+                //bookIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(bookIntent);
+                return true;
+
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
