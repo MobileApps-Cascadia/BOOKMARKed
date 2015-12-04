@@ -694,10 +694,26 @@ public class BookWantedActivity extends AppCompatActivity {
         });
     }
 
+<<<<<<< HEAD
     private String getBookConditionFromSpinner() {
         if (bookConditionSpinner.getSelectedItemPosition() == 0) return "";
 
         return (String) bookConditionSpinner.getSelectedItem();
+=======
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == EDIT_REQUEST_CODE) {
+            //System.out.println("*** in onActivityResult ***");
+
+            if (resultCode == RESULT_OK) {
+                System.out.println("***Received Edit Request Code with OK result");
+
+                // update current screen - just close for now, but
+                // pass info to update the list
+                needsUpdating = true;
+                finish();
+            }
+        }
+>>>>>>> 87d6e851f5dca03f3a8ffcd924d210cf7af6cdb9
     }
 
     // To be later to update the list adapter
