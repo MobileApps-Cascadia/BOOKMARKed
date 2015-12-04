@@ -622,16 +622,18 @@ public class BookWantedActivity extends AppCompatActivity {
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        //if (requestCode == EDIT_REQUEST_CODE) {
-        //System.out.println("*** in onActivityResult ***");
+        if (requestCode == EDIT_REQUEST_CODE) {
+            //System.out.println("*** in onActivityResult ***");
 
-        if (resultCode == RESULT_OK) {
-            // update current screen - just close for now, but
-            // pass info to update the list
-            needsUpdating = true;
-            finish();
+            if (resultCode == RESULT_OK) {
+                System.out.println("***Received Edit Request Code with OK result");
+
+                // update current screen - just close for now, but
+                // pass info to update the list
+                needsUpdating = true;
+                finish();
+            }
         }
-
     }
 
     @Override
